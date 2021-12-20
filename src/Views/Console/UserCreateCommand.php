@@ -38,7 +38,7 @@ class UserCreateCommand extends Command
 
         $user = new User();
         if($user->createUser($data) == true) {
-            $dataOut = json_encode($data);
+            $dataOut = json_encode($data,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
             $output->writeln("\n\r====SUCCESS!====\n\r"); 
             $output->writeln("User data: " .$dataOut);         
         }

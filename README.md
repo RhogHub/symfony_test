@@ -3,7 +3,7 @@
 # About
 
 Test for Alter Solutions 2021-2022.
-The application has two main functionalities: Create a new user (with first name, last name, e-mail and age) and create a password for a user.
+The application has two main features: Create a new user (with first name, last name, e-mail and age) and create a password for a user.
 
 
 # Layout
