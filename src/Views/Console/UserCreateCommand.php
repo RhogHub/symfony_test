@@ -12,7 +12,7 @@ class UserCreateCommand extends Command
     protected function configure() {
         $this
             ->setName('USER:CREATE')
-            ->setDescription("Create a new User")
+            ->setDescription("Create a new User: [First name][Last name][E-mail][<Age>]")
             ->addArgument('userFirstName', InputArgument::REQUIRED, 'Please enter your first name: ', null)
             ->addArgument('userLastName', InputArgument::REQUIRED, 'Please enter your last name: ', null)
             ->addArgument('userEmail', InputArgument::REQUIRED, 'Please enter your e-mail address: ', null)

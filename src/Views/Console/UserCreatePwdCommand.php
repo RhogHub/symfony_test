@@ -12,7 +12,7 @@ class UserCreatePwdCommand extends Command
     protected function configure() {
         $this
             ->setName('USER:CREATE-PWD')
-            ->setDescription("Create a new password for a user in database.")
+            ->setDescription("Create a new password for a user in database: [userID][New password][Confirm the new password]")
             ->addArgument('userId', InputArgument::REQUIRED, 'Please enter an existing UserId: ', null)
             ->addArgument('userPass', InputArgument::REQUIRED, 'Please enter the new password: ', null)
             ->addArgument('userConfirmPass', InputArgument::REQUIRED, 'Please confirm the new password: ', null);
