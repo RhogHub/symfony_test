@@ -3,6 +3,13 @@ namespace ASPTest\Controllers;
 
 use ASPTest\Models\ModelUser;
 
+const MIN_CHAR_USERNAME = 2;
+const MAX_CHAR_USERNAME = 35;
+const MIN_USER_AGE = 0;
+const MAX_USER_AGE = 150;
+const MIN_LENGTH_PASS = 6;
+
+
 class User 
 {
     // =====================================================
@@ -149,7 +156,7 @@ class User
 
             $lenUserName = strlen($inputUserName);
 
-            if($lenUserName < 2 || $lenUserName > 35) {
+            if($lenUserName < MIN_CHAR_USERNAME || $lenUserName > MAX_CHAR_USERNAME) {
                 return false;
             } else {
                 return true;
@@ -163,11 +170,11 @@ class User
     private function validateUserAge($age)
     {
         // Check if the age of the user is valid.
-        if($age < 0 ) {
+        if($age < MIN_USER_AGE ) {
             return false;
         }
 
-        if($age > 150) {
+        if($age > MAX_USER_AGE) {
             return false;
         }
 
@@ -208,11 +215,9 @@ class User
         //Enforce length - OK      
         //Contains uppercase - OK        
         //Contains digit - OK
-        //Contains symbol - OK
+        //Contains symbol - OK        
 
-        $minlength = 6;
-
-        if((strlen($password) >= $minlength) && 
+        if((strlen($password) >= MIN_LENGTH_PASS) && 
             (preg_match("/[A-Z]/", $password)) &&     
             (preg_match("/[0-9]/", $password)) &&
             (preg_match("/[^a-zA-Z0-9]/", $password))) {
