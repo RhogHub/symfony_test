@@ -11,9 +11,10 @@ class CreatePwdTest extends TestCase
     public function testeValidateCreatePwd($data)
     {
         $user = new User();        
-        $status = $user->ValidateCreatePwd($data);
-        
-        $this->assertEquals(false, $status['status']);
+        $result = $user->ValidateCreatePwd($data);
+        $status= $result['status'];
+            
+        $this->assertEquals(false, $status);
     }
 
     // =====================================================
