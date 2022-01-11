@@ -122,7 +122,7 @@ class User
             if($this->validatePass($userPass) == false) {
                 $data = [
                     'status' => false,
-                    'message' => "Error: Invalid password. The password must have at least: 1 special character, 1 number and 1 uppercase letter."
+                    'message' => "Error: Invalid password. The password must have at least: 6 characters, 1 special character, 1 number and 1 uppercase letter."
                 ];
 
                 return $data;                
