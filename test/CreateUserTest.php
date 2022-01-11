@@ -12,9 +12,9 @@ class CreateUserTest extends TestCase
     {
         $user = new User();        
         $result = $user->validateCreateUser($data);
-        $results = $result['status'];
+        $status = $result['status'];
 
-        $this->assertEquals(true, $results);
+        $this->assertEquals(true, $status);
     }
 
     // =====================================================
